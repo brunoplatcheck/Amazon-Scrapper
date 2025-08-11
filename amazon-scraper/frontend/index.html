@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Product Scraper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">
+          <span class="logo-icon">🛒</span>
+          Amazon Scraper
+        </h1>
+        <p class="subtitle">Busque produtos da Amazon em tempo real</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Search Section -->
+        <section class="search-section">
+          <div class="search-card">
+            <h2>Buscar Produtos</h2>
+            <div class="search-form">
+              <div class="input-group">
+                <input 
+                  type="text" 
+                  id="keyword-input" 
+                  placeholder="Digite o produto que deseja buscar (ex: laptop, smartphone...)"
+                  class="search-input"
+                />
+                <button id="search-btn" class="search-btn">
+                  <span class="btn-text">Buscar</span>
+                  <span class="btn-loading" style="display: none;">
+                    <span class="spinner"></span>
+                    Buscando...
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="results-section" style="display: none;">
+          <div class="results-header">
+            <h3 id="results-title">Resultados da Busca</h3>
+            <span id="results-count" class="results-count"></span>
+          </div>
+          <div id="products-grid" class="products-grid">
+            <!-- Products will be inserted here -->
+          </div>
+        </section>
+
+        <!-- Error Section -->
+        <section class="error-section" id="error-section" style="display: none;">
+          <div class="error-card">
+            <div class="error-icon">⚠️</div>
+            <h3>Ops! Algo deu errado</h3>
+            <p id="error-message"></p>
+            <button id="retry-btn" class="retry-btn">Tentar Novamente</button>
+          </div>
+        </section>
+
+        <!-- Loading Section -->
+        <section class="loading-section" id="loading-section" style="display: none;">
+          <div class="loading-card">
+            <div class="loading-spinner"></div>
+            <h3>Buscando produtos...</h3>
+            <p>Aguarde enquanto coletamos os dados da Amazon</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Amazon Scraper. Projeto educacional.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
